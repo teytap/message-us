@@ -1,0 +1,63 @@
+main {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  background-color: rgb(33, 32, 32);
+  color: white;
+  height: 600px;
+  gap: 10px;
+  padding: 20px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+img {
+  margin: 0 auto;
+  border-radius: 40px;
+  max-width: 160px;
+}
+input {
+  padding: 15px;
+  border: none;
+  border-radius: 7px;
+  background-color: #53bbd5;
+  color: white;
+  font-size: 16px;
+}
+input:hover,
+button:hover {
+  opacity: 0.8;
+}
+#message-input {
+  background-color: #64d0bb;
+}
+button {
+  padding: 15px;
+  border: none;
+  border-radius: 7px;
+  background-color: #6074ea;
+  color: white;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+}
+#from-to {
+  display: flex;
+  gap: 10px;
+}
+#from-to input {
+  width: 100%;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  background-color: #7460ef;
+  padding: 15px;
+  list-style: none;
+  border-radius: 0px 24px 24px 24px;
+}
+h2 {
+  text-align: center;
+  color: grey;
+}
