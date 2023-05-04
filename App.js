@@ -32,8 +32,7 @@ function getMessageHtml(item) {
     let from = item[1].fromValue;
     let to = item[1].toValue;
     let likeCount = item[1].like;
-    let isLiked = false;
-
+    let isLiked = item[1].isLiked;
     let newMessage = document.createElement("li");
     newMessage.innerHTML = `<li>
       
@@ -55,8 +54,11 @@ function getMessageHtml(item) {
       if (e.target.id === "likes") {
         if (!isLiked) {
           likeCount++;
-          isLiked = true;
-          //document.getElementById("likes-count").innerHTML = likeCount;
+          let exactLocationOfItemInDB = ref(database, `messageUs/${itemID}`);
+          update(exactLocationOfItemInDB, {
+            like: likeCount,
+            isLiked: true,
+          });
         }
       }
     });
@@ -86,6 +88,7 @@ function publish() {
       fromValue: userFrom.value,
       toValue: userTo.value,
       like: 0,
+      isLiked: false,
     });
     warning.style.display = "none";
     messageText.value = "";
