@@ -37,7 +37,7 @@ function getMessageHtml(item) {
     newMessage.innerHTML = `<li>
       
       <h4>To: ${to}</h4>
-      <div class="message-field">"${message}"</div>
+      <div class="message-field">${message}</div>
       <h4>From: ${from}</h4>
       <div class="actions"><span id="likes">♥<span id="likes-count">${likeCount}</span></span>  
       <span class="material-symbols-outlined" id="trash-bin">

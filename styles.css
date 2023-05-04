@@ -87,6 +87,7 @@ li {
 li h4 {
   margin-bottom: 2px;
   margin-top: 2px;
+  opacity: 0.6;
 }
 li .message-field {
   background-color: #7e6dec;
