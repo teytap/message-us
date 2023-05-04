@@ -5,6 +5,13 @@
   --blue: #53bbd5;
   --purple: #6074ea;
 }
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+  user-select: none;
+}
 main {
   width: 320px;
   display: flex;
@@ -14,17 +21,16 @@ main {
   color: white;
   gap: 10px;
   padding: 20px;
-  font-family: var(--font-family);
 }
 img {
   margin: 0 auto;
   border-radius: 40px;
-  max-width: 160px;
+  max-width: 140px;
 }
 textarea,
 input,
 button {
-  padding: 15px;
+  padding: 13px;
   border: none;
   border-radius: 7px;
   font-family: var(--font-family);
@@ -76,7 +82,6 @@ li {
   padding: 10px 10px 0px 10px;
   list-style: none;
   border-radius: 7px;
-  /* border: 2px dashed rgb(33, 32, 32); */
   margin-bottom: 10px;
 }
 li h4 {
