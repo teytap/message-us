@@ -25,12 +25,6 @@ const publishBtn = document.getElementById("publish-btn");
 const warning = document.querySelector(".warning");
 const messagesContainer = document.querySelector("#messages-container");
 
-// document.addEventListener("click", function (e) {
-//   if (e.target.id === "trash-bin") {
-//     if()
-//     console.log("delete");
-//   }
-// });
 function getMessageHtml(item) {
   let itemID = item[0];
   if (item[1]) {
@@ -51,7 +45,7 @@ function getMessageHtml(item) {
       delete
       </span></div></li>
       `;
-    messagesContainer.append(newMessage);
+
     //each li has its own delete and like function
     newMessage.addEventListener("click", function (e) {
       if (e.target.id === "trash-bin") {
@@ -61,7 +55,6 @@ function getMessageHtml(item) {
       if (e.target.id === "likes") {
         if (!isLiked) {
           likeCount++;
-          console.log(likeCount);
           isLiked = true;
           //document.getElementById("likes-count").innerHTML = likeCount;
         }
