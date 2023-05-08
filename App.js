@@ -34,8 +34,8 @@ function getMessageHtml(item) {
     let likeCount = item[1].like;
     let isLiked = item[1].isLiked;
     let newMessage = document.createElement("li");
+
     newMessage.innerHTML = `<li>
-      
       <h4>To: ${to}</h4>
       <div class="message-field">${message}</div>
       <h4>From: ${from}</h4>
@@ -47,17 +47,22 @@ function getMessageHtml(item) {
 
     //each li has its own delete and like function
     newMessage.addEventListener("click", function (e) {
+      let exactLocationOfItemInDB = ref(database, `messageUs/${itemID}`);
       if (e.target.id === "trash-bin") {
-        let exactLocationOfItemInDB = ref(database, `messageUs/${itemID}`);
         remove(exactLocationOfItemInDB);
       }
       if (e.target.id === "likes") {
         if (!isLiked) {
           likeCount++;
-          let exactLocationOfItemInDB = ref(database, `messageUs/${itemID}`);
           update(exactLocationOfItemInDB, {
             like: likeCount,
             isLiked: true,
+          });
+        } else {
+          likeCount--;
+          update(exactLocationOfItemInDB, {
+            like: likeCount,
+            isLiked: false,
           });
         }
       }

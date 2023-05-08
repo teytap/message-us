@@ -13,7 +13,7 @@ body {
   user-select: none;
 }
 main {
-  width: 320px;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -21,6 +21,7 @@ main {
   color: white;
   gap: 10px;
   padding: 20px;
+  min-height: 620px;
 }
 img {
   margin: 0 auto;
@@ -57,12 +58,13 @@ button {
 }
 input:hover,
 button:hover,
+button:active,
 textarea:hover {
   opacity: 0.8;
   cursor: pointer;
 }
 .warning {
-  color: rgb(167, 14, 14);
+  color: orange;
   display: none;
   font-size: 12px;
 }
@@ -93,7 +95,6 @@ li .message-field {
   background-color: #7e6dec;
   padding: 5px;
   border-radius: 5px;
-  /* border: 2px dashed rgb(33, 32, 32); */
 }
 .actions {
   display: flex;
