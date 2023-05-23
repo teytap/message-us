@@ -33,9 +33,11 @@ function getMessageHtml(item) {
     let to = item[1].toValue;
     let likeCount = item[1].like;
     let isLiked = item[1].isLiked;
+    let date = item[1].date;
     let newMessage = document.createElement("li");
 
     newMessage.innerHTML = `<li>
+    <div class="date">${date}</div>
       <h4>To: ${to}</h4>
       <div class="message-field">${message}</div>
       <h4>From: ${from}</h4>
@@ -88,12 +90,16 @@ onValue(messageUsDB, function (snapshot) {
 function publish() {
   //if inputs exists
   if (messageText.value && userFrom.value && userTo.value) {
+    const today = new Date(Date.now());
+    const date = today.toLocaleDateString();
+    const time = today.toLocaleTimeString();
     push(messageUsDB, {
       messageValue: messageText.value,
       fromValue: userFrom.value,
       toValue: userTo.value,
       like: 0,
       isLiked: false,
+      date: date + " at " + time,
     });
     warning.style.display = "none";
     messageText.value = "";
